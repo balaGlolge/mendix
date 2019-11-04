@@ -17,6 +17,10 @@ We will need that user story for the next part of the training, so make sure you
 - Creating user stories in Excel and import on Mendix
 ![Excel User Stories](/images/excel_user_stories.png "Excel User Stories")
 
+# Errors
+## After deleting Stories
+Resolved through log-out and log-in.
+
 # Mendix
 
 The goal of this project is to learn low-code app development with Mendix and find a solution to deliver it in a classroom setting for courses in City University of Seattle.
@@ -56,7 +60,10 @@ The goal of this project is to learn low-code app development with Mendix and fi
 5. Preview
 
 # Concepts
-## Agile
+## Project Roles
+Each Scrum process needs a couple of vital roles to be successful: the Product Owner, the Scrum Master, and the Development Team. Altogether, these roles comprise the Scrum Team.
+![Project Roles](/images/project_roles.png "Project Roles")
+## Project - Methodology Agile
 ![Agile Process](/images/agile_process.png "Agile Process")
 
 ## User Stories
@@ -78,6 +85,20 @@ Represent the effort it will take to finish that user story.
 You can further break down the work that needs to be done for the user story into (sub-) tasks.
 
 ![Story and Tasks](/images/stories.png "Story and Tasks")
+
+## Sprint
+### Sprint Status
+Shows you how much you have progressed towards the goal of your Sprint
+
+![Sprint Status](/images/sprint_status.png "Sprint Status")
+### Burndown Chart
+It presents user stories and tasks, and also takes into account the effort needed to finish each user story.
+
+![Burndown Chart](/images/burndown_chart.png "Burndown Chart")
+### Release Plan
+ It can help you set priorities and give you a better estimate of what needs to be done when!
+
+![Release Plan](/images/release_plan.png "Release Plan")
 
 ## Wireframing
 ![Wireframing](/images/agile_process.png "Wireframing")
