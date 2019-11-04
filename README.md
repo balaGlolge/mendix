@@ -1,3 +1,22 @@
+# Ideas to deploy for classroom
+- Create user stories in Mendix developer portal
+```
+Add your First User Story
+Time for you to try! Add one of the user stories we defined earlier. Use the following details:
+
+User story: As an administrator, I want to be able to manage my data, so that I can make changes at any time.
+
+Story type: Feature
+
+Story points: Add an estimate. How much effort do you think it will take?
+
+Description: How would you describe this user story so that your team understands what it’s about?
+
+We will need that user story for the next part of the training, so make sure you add it to your backlog!
+```
+- Creating user stories in Excel and import on Mendix
+![Excel User Stories](/images/excel_user_stories.png "Excel User Stories")
+
 # Mendix
 
 The goal of this project is to learn low-code app development with Mendix and find a solution to deliver it in a classroom setting for courses in City University of Seattle.
@@ -36,6 +55,42 @@ The goal of this project is to learn low-code app development with Mendix and fi
 4. Toolbox, Properties, Buzz
 5. Preview
 
+# Concepts
+## Agile
+![Agile Process](/images/agile_process.png "Agile Process")
+
+## User Stories
+Here are three things to think of when creating a user story:
+
+Who is my app’s end-user?  <user type>
+
+What does the end-user need to do? <business value>
+
+How can I help them do that? <what>
+
+Then, you can use this simple user story template:
+
+As a <user type>, I want <what>, so that <business value>.
+
+### Story Points
+Represent the effort it will take to finish that user story.
+### Tasks
+You can further break down the work that needs to be done for the user story into (sub-) tasks.
+
+![Story and Tasks](/images/stories.png "Story and Tasks")
+
+## Wireframing
+![Wireframing](/images/agile_process.png "Wireframing")
+
+## Mendix Lifecycle
+1. Capture
+  - Buzz
+  - User Stories
+  - Wireframes
+2. Develop
+3. Deploy
+4. Operate
+
 # Mendix Studio Workshop Playlist
 [Mendix Studio Video Playlist](https://video.mendix.com/categories/mendix-studio-workshop?page=2&slug=mendix-studio-workshop)
 ## Manual Domain Modeling
@@ -71,6 +126,28 @@ EndDate         Date and Time
 ## Spreadsheet to App
 - Create App > Start with Data > Choose Spreadsheet > Import Data
 - Preview > Manage Data
+
+## Become a Rapid Developer (Analyst)
+### User Stories
+
+- As an administrator, I want to be able to add a new training, so that I can keep my trainings up-to-date.
+  - Story type: Feature
+  - Story points: 5
+  - Description:
+```
+I need to be able to view and manage all my:
+- Courses
+- Locations
+- Teachers
+
+When I am at the office I use my desktop, but when I am traveling for work. I mostly use my tablet and mobile phone. Therefore, It's really important for me to be able to manage all of the above data from desktop, tablet, or mobile.
+```
+- As an administrator, I want to be able to edit a training, so that I can keep my trainings up-to-date.
+
+- As a teacher, I need to be able to view the email address of each participant, so that I can send them their certificates of participation.
+
+### Wireframing
+
 
 ## User Interface
 ### Part 1
