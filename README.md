@@ -17,6 +17,8 @@ We will need that user story for the next part of the training, so make sure you
 - Creating user stories in Excel and import on Mendix
 ![Excel User Stories](/images/excel_user_stories.png "Excel User Stories")
 
+# Learning Path - Rapid Developer (Analyst)
+
 # Errors
 ## After deleting Stories
 Resolved through log-out and log-in.
@@ -56,10 +58,21 @@ The goal of this project is to learn low-code app development with Mendix and fi
 
   - Settings: It contains information on Mendix App Store widgets and local widgets in your app.
 3. Breadcrumbs show which element is selected in the Editor.
+![Navigation Layout](/images/navigation_layout.png "Navigation Layout")
+
 4. Toolbox, Properties, Buzz
 5. Preview
 
 # Concepts
+## Mendix Lifecycle
+1. Capture
+  - Buzz
+  - User Stories
+  - Wireframes
+2. Develop
+  - Sprint Planning
+3. Deploy
+4. Operate
 ## Project Roles
 Each Scrum process needs a couple of vital roles to be successful: the Product Owner, the Scrum Master, and the Development Team. Altogether, these roles comprise the Scrum Team.
 ![Project Roles](/images/project_roles.png "Project Roles")
@@ -69,16 +82,32 @@ Each Scrum process needs a couple of vital roles to be successful: the Product O
 ## User Stories
 Here are three things to think of when creating a user story:
 
-Who is my app’s end-user?  <user type>
+Who is my app’s end-user?  `<user type>`
 
-What does the end-user need to do? <business value>
+What does the end-user need to do? `<business value>`
 
-How can I help them do that? <what>
+How can I help them do that? `<what>`
 
 Then, you can use this simple user story template:
 ```
 As a <user type>, I want <what>, so that <business value>.
 ```
+Examples:
+- As an administrator, I want to be able to add a new training, so that I can keep my trainings up-to-date.
+  - Story type: Feature
+  - Story points: 5
+  - Description:
+```
+I need to be able to view and manage all my:
+- Courses
+- Locations
+- Teachers
+
+When I am at the office I use my desktop, but when I am traveling for work. I mostly use my tablet and mobile phone. Therefore, It's really important for me to be able to manage all of the above data from desktop, tablet, or mobile.
+```
+- As an administrator, I want to be able to edit a training, so that I can keep my trainings up-to-date.
+
+- As a teacher, I need to be able to view the email address of each participant, so that I can send them their certificates of participation.
 ### Story Points
 Represent the effort it will take to finish that user story.
 ### Tasks
@@ -103,16 +132,56 @@ It presents user stories and tasks, and also takes into account the effort neede
 ## Wireframing
 ![Wireframing](/images/agile_process.png "Wireframing")
 
-## Mendix Lifecycle
-1. Capture
-  - Buzz
-  - User Stories
-  - Wireframes
-2. Develop
-  - Sprint Planning
-3. Deploy
-4. Operate
+## Wireframing the User Story
+### As an administrator, I want to be able to easily access and manage my data, so I can run my company more efficiently.
+Completing this user story would involve the following tasks:
+1. Have a homepage that gives access to pages where information can be seen.
+2. Adjust the homepage layout to accommodate for the buttons to be created.
+3. Add the buttons.
+4. Add the pages to which the buttons will link.
+5. Link the buttons to these pages that show the information in the system.
+![Wireframe Pages](/images/wireframe_pages.png "Wireframe Pages")
+![Wireframe Pages Detailed](/images/wireframe_pages_detailed.png "Wireframe Pages Detailed")
 
+## Layout Grid
+The layout grid is a widget that gives structure to your pages. It contains one or more rows, and each row contains 1–4 columns (in the Mendix Studio Pro, you can expand that to be twelve columns). Each column has a weight (a number from 1 to 12), and the total of the weights of the columns in a row must always add up to 12 (in the example below: one column with weight 12; two columns with weight 6; one of 3 and one of 9).
+## Containers and Widgets
+Once you have created the page structure (the layout), you start building the content of the page by adding different kinds of widgets. These can be, for example, text widgets to display text or button widgets.
+
+You can place these widgets inside containers. There are a few reasons to do this:
+
+- You can group the widgets. This will allow you to move them all at once (if needed), or put a border around them to group them visually for your end-user. You can also group them to hide all of them at once.
+
+- You can add multiple widgets in a container to give them consistent styling.
+
+- You can use the container to create spacing and alignment in pages (for example, to align a group of buttons to the right side of the page, or to create spacing around a button).
+
+A container is also considered a widget.
+
+## Entities and Attributes
+Before showing data in your app, you first need to understand two basic principles:
+
+Entities - To show data in your app, you need to connect the list view to an entity. An example of an entity for the LearnNow app would be Course. The entity will be filled with attributes.
+
+Attributes - Attributes determine what kind of information regarding the courses you can see and add (for example, a title and description). Each attribute has a data type. This property defines the type of data that can be stored in the attribute, just like you format the cells of an Excel sheet.
+
+In other words: An Entity is the Data that is displayed, and the attribute defines the format of that Data.
+
+The following Attribute types are available, each with their possible values:
+![Attribute Types](/images/attribute_types.png "Attribute Types")
+### Example
+Take a look at the following image of a jar of strawberry jam. The jar would be the entity in this example, but can you think of a couple of attributes and their types for this jar?
+
+![Attribute Example](/images/attribute_example.png "Attribute Example")
+### Define Attributes
+![Define Attributes](/images/define_attributes.png "Define Attributes")
+### Naming attributes
+When you create entities or attributes that have more than one word in their name (for example, email address), use CamelCase. This means you use no white-spaces or underscores (“_”) and start each new word with an upper-case letter. Mendix will understand this, and everywhere the name of the entity or attribute needs to be shown, Mendix will output it as separate words and make those upper-case letters lower-case again. For example, “Email address” written in CamelCase is “EmailAddress.”
+
+## Objects
+An Object is a single instance of an Entity, consisting of Attributes. You can create multiple Objects based on one entity. These Objects can be stored in the database. You can see the Entity and its Attributes combined as a blueprint of the information you can add to your app. So, each Course in the system is an Object, and when you create a new Course, you create a new Object of the type (entity) Course.
+
+If you think back to the jar example, the Entity and Attributes are like the blueprint of the jar, handed to the manufacturer so he knows what the jar should look like when he makes it. Once he starts producing the jars, each jar that is created is an Object. The database would be like a shelf where you store all the created jars.
 # Mendix Studio Workshop Playlist
 [Mendix Studio Video Playlist](https://video.mendix.com/categories/mendix-studio-workshop?page=2&slug=mendix-studio-workshop)
 ## Manual Domain Modeling
@@ -148,28 +217,6 @@ EndDate         Date and Time
 ## Spreadsheet to App
 - Create App > Start with Data > Choose Spreadsheet > Import Data
 - Preview > Manage Data
-
-## Become a Rapid Developer (Analyst)
-### User Stories
-
-- As an administrator, I want to be able to add a new training, so that I can keep my trainings up-to-date.
-  - Story type: Feature
-  - Story points: 5
-  - Description:
-```
-I need to be able to view and manage all my:
-- Courses
-- Locations
-- Teachers
-
-When I am at the office I use my desktop, but when I am traveling for work. I mostly use my tablet and mobile phone. Therefore, It's really important for me to be able to manage all of the above data from desktop, tablet, or mobile.
-```
-- As an administrator, I want to be able to edit a training, so that I can keep my trainings up-to-date.
-
-- As a teacher, I need to be able to view the email address of each participant, so that I can send them their certificates of participation.
-
-### Wireframing
-
 
 ## User Interface
 ### Part 1
