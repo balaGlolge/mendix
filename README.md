@@ -204,7 +204,16 @@ If you decide to go this way, this can be done by using the feedback function. T
 
 All comments then will be visible on Mendix Developer Portal, on the Feedback page.
 
+Feedback in the Publish App
+
 ![Feedback](/images/feedback.png "Feedback")
+
+Feedback in Developer Portal
+
+![Feedback in Developer Portal](/images/feedback_dev_portal.png "Feedback in Developer Portal")
+
+
+
 # Mendix Studio Workshop Playlist
 [Mendix Studio Video Playlist](https://video.mendix.com/categories/mendix-studio-workshop?page=2&slug=mendix-studio-workshop)
 ## Manual Domain Modeling
