@@ -62,6 +62,12 @@ The goal of this project is to learn low-code app development with Mendix and fi
 
 4. Toolbox, Properties, Buzz
 5. Preview
+6. Navigation Menu
+
+Open the Navigation Document (which you can access by using the navigation menu on the left side of Mendix Studio).
+
+You can add main navigation items and sub-items:
+![Navigation Menu](/images/nav_menu.png "Navigation Menu")
 
 # Concepts
 ## Mendix Lifecycle
@@ -175,13 +181,29 @@ Take a look at the following image of a jar of strawberry jam. The jar would be 
 ![Attribute Example](/images/attribute_example.png "Attribute Example")
 ### Define Attributes
 ![Define Attributes](/images/define_attributes.png "Define Attributes")
-### Naming attributes
-When you create entities or attributes that have more than one word in their name (for example, email address), use CamelCase. This means you use no white-spaces or underscores (“_”) and start each new word with an upper-case letter. Mendix will understand this, and everywhere the name of the entity or attribute needs to be shown, Mendix will output it as separate words and make those upper-case letters lower-case again. For example, “Email address” written in CamelCase is “EmailAddress.”
 
 ## Objects
 An Object is a single instance of an Entity, consisting of Attributes. You can create multiple Objects based on one entity. These Objects can be stored in the database. You can see the Entity and its Attributes combined as a blueprint of the information you can add to your app. So, each Course in the system is an Object, and when you create a new Course, you create a new Object of the type (entity) Course.
 
 If you think back to the jar example, the Entity and Attributes are like the blueprint of the jar, handed to the manufacturer so he knows what the jar should look like when he makes it. Once he starts producing the jars, each jar that is created is an Object. The database would be like a shelf where you store all the created jars.
+
+## Naming Conventions
+### Attributes
+When you create entities or attributes that have more than one word in their name (for example, email address), use CamelCase. This means you use no white-spaces or underscores (“_”) and start each new word with an upper-case letter. Mendix will understand this, and everywhere the name of the entity or attribute needs to be shown, Mendix will output it as separate words and make those upper-case letters lower-case again. For example, “Email address” written in CamelCase is “EmailAddress.”
+### Pages
+Mendix naming conventions, a good name for this page would be Course NewEdit. This is because the page is going to be used for filling out the details of new course objects AND changing the details of existing courses.
+
+## Work with Feedback
+Work with Feedback
+Once you have solved the errors and published your app, it is a good time to let your team preview the app to add their feedback and ideas.
+
+When collaborating with your team, it’s a good practice to document planned work, add comments and feedback to current tasks, or else – so everyone knows what’s going on. This can be done via feedback.
+
+If you decide to go this way, this can be done by using the feedback function. The floating feedback bar will give you a possibility to comment on the app.
+
+All comments then will be visible on Mendix Developer Portal, on the Feedback page.
+
+![Feedback](/images/feedback.png "Feedback")
 # Mendix Studio Workshop Playlist
 [Mendix Studio Video Playlist](https://video.mendix.com/categories/mendix-studio-workshop?page=2&slug=mendix-studio-workshop)
 ## Manual Domain Modeling
