@@ -67,6 +67,7 @@ The goal of this project is to learn low-code app development with Mendix and fi
 Open the Navigation Document (which you can access by using the navigation menu on the left side of Mendix Studio).
 
 You can add main navigation items and sub-items:
+
 ![Navigation Menu](/images/nav_menu.png "Navigation Menu")
 
 # Concepts
