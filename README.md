@@ -76,9 +76,9 @@ What does the end-user need to do? <business value>
 How can I help them do that? <what>
 
 Then, you can use this simple user story template:
-
+```
 As a <user type>, I want <what>, so that <business value>.
-
+```
 ### Story Points
 Represent the effort it will take to finish that user story.
 ### Tasks
@@ -109,6 +109,7 @@ It presents user stories and tasks, and also takes into account the effort neede
   - User Stories
   - Wireframes
 2. Develop
+  - Sprint Planning
 3. Deploy
 4. Operate
 
