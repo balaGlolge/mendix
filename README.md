@@ -293,11 +293,13 @@ To create your own process, you model a microflow. With microflows, you can crea
 2. The Show Page event will open the TrainingEvent_NewEdit page. This page needs a TrainingEvent object but the microflow does not have that object yet. In order to create it, you need another activity. In the Toolbox, find the Create Object activity and place it on the microflow, between the start event and the Show Page activity.
 
 ![Creating Microflows](/images/creating_microflows.png "Creating Microflows")
+
 3. With the Create Object activity selected, go to the Properties pane. Select the entity for which you want to create an object. In this case, that is the TrainingEvent entity. See how the Variable Name is automatically set to NewTrainingEvent? Variables always need a unique name, so the microflow knows which variable you are referring to. Mendix Studio will try to help you with naming variables when possible. In this case, the variable is a training event and it’s new, so Mendix Studio generates the name NewTrainingEvent for you.
 
 4. Under Initialize Members, click Add New Value. Open the Select an attribute or association dropdown to see the options. You see that you can set the value of the StartDate, EndDate, Course, Location or Teacher. In this case you need to set the value of the Course to the Course that is available as the Parameter in the microflow.
 
 5. Next you need to assign the Parameter to the Association. Click Variables / Attributes and select Course from the list. This will prefill the Course association on your TrainingEvent page so the TrainingEvent_NewEdit page will have the right Course selected.
+
 ![Creating Variables](/images/creating_variables.png "Creating Variables")
 ### Events
 Events represent the start and end points of a microflow.
