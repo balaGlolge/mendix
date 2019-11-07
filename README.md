@@ -17,6 +17,23 @@ We will need that user story for the next part of the training, so make sure you
 - Creating user stories in Excel and import on Mendix
 ![Excel User Stories](/images/excel_user_stories.png "Excel User Stories")
 
+- Create a New Entity
+
+# Common Gotchas
+## Kanban Board
+- Mendix Portal > Develop > Planning
+
+## Nested Data
+I’m trying to copy to dropdown selection from the 4.10.3 Create Details Page - Rapid Developer Path (Business Analyst) section.
+
+However, I couldn’t load any attributes for the Trainee Name.
+
+My question really is, is there a dropdown selection widget that lists all of the Trainee Name in the Database?
+
+Make sure that the first thing Jimmy can do on that page is to select a Trainee. Also, this is probably the most important information about the Registration, so it should be the first editable field. Trainee selection widget.
+
+Answer
+- That is because none of the Trainee’s attributes have a correct type for a dropdown: Enumeration or Association. Over association you can get the Trainee’s name, but you have to lose the Dataview Trainee first. Place the dropdown in the dataview of the registration. Then you will be able to select over association Registration/Registration_Trainee/Trainee/TraineeName.
 # Learning Path - Rapid Developer (Analyst)
 
 # Errors
@@ -188,11 +205,45 @@ An Object is a single instance of an Entity, consisting of Attributes. You can c
 
 If you think back to the jar example, the Entity and Attributes are like the blueprint of the jar, handed to the manufacturer so he knows what the jar should look like when he makes it. Once he starts producing the jars, each jar that is created is an Object. The database would be like a shelf where you store all the created jars.
 
+## Database
+The structure of the domain model determines what the database will look like. Each entity will become a database table, and each attribute will become a column in the database.
+![Database](/images/database.png "Database")
+You see that ID column? That isn't an attribute. So how did it end up in the database table? This is something Mendix does automatically for you, because every object always needs a unique identifier (an ID) so that the system knows which object it is.
+
+You can change the domain model as often as you like, and the database will synchronize when you publish the app again. Also, when you change the name of an entity or attribute, your app will still work, because Mendix Studio will automatically apply these changes everywhere.
+
+### Associations in the Domain Model
+In the Domain Model, the various entities need to be connected to each other so they can interact.
+- One-to-Many Association (1–*): One player always plays for one specific team, but a team has multiple (many) players.
+- One-to-One Association (1–1): In the football example, this is shown in the association between a team and a stadium. A team can have only one home stadium, and a stadium can have only one home team.
+- Reference Set (*–*): a league is played by many teams, but a team can also compete in multiple leagues.
+![Associations](/images/associations.png "Associations")
+
+### Information Entity
+A training event can have multiple Trainees attending, and a Trainee can attend multiple training events. So, this looks like it will be a many-to-many association, also known as the reference set.
+![Information Entity 1](/images/info_entity_1.png "Information Entity 1")
+What you need is a different approach than just a regular many-to-many association. You need an entity in between Trainee and TrainingEvent that says something about the connection between the two. This is called an information entity.
+![Information Entity 2](/images/info_entity_2.png "Information Entity 2")
+### Extending Domain Model
+![Information Entity 3](/images/info_entity_3.png "Information Entity 3")
+## Nested Data
+Now you need to think of a way to manage the Registrations in the app. Managing them from the TrainingEvent Overview page makes sense, because the Registrations will belong to a specific training event.
+
+Now, if you want to look at the Registrations of a particular TrainingEvent, you need to nest a Registration list view inside a TrainingEvent data view. This way, Mendix Studio can use the context of the data view (a particular training event), to only show those registrations that belong to this training event.
+![Nested Data](/images/nested_data.png "Nested Data")
+
 ## Naming Conventions
 ### Attributes
 When you create entities or attributes that have more than one word in their name (for example, email address), use CamelCase. This means you use no white-spaces or underscores (“_”) and start each new word with an upper-case letter. Mendix will understand this, and everywhere the name of the entity or attribute needs to be shown, Mendix will output it as separate words and make those upper-case letters lower-case again. For example, “Email address” written in CamelCase is “EmailAddress.”
 ### Pages
 Mendix naming conventions, a good name for this page would be Course NewEdit. This is because the page is going to be used for filling out the details of new course objects AND changing the details of existing courses.
+### Associations
+`Entity1_Entity2`
+- Begins: Entity1
+- Ends: Entity2
+### Microflows
+`Prefix_Entity_Operation`
+- ACT_Course_ScheduleTrainingEvent
 
 ## Work with Feedback
 Work with Feedback
@@ -212,8 +263,57 @@ Feedback in Developer Portal
 
 ![Feedback in Developer Portal](/images/feedback_dev_portal.png "Feedback in Developer Portal")
 
+## Microflow
+### Modeled Instead of Programmed
+Microflow logic is modeled using a visual editor, which makes it very accessible for everyone involved. The graphical notation of microflows is based on the Business Process Modeling Notation (BPMN). BPMN is a standardized graphical notation for drawing business processes in a workflow.
+### When Do You Need Microflows?
+- You’ll need microflows in the following scenarios:
+- You want to extend or change default behavior, for example:
+- Extending the behavior of default buttons (New, Edit, etc.) with additional actions, as in a validation check
+- You want to handle business specific processes, for example:
+- Checking if a selected trainee meets the prerequisites of a course
+- Automatically determining the course end-date based on the start-date
+- You want to integrate with other systems, databases, web services, etc., for example:
+- Integrating with a personnel database to pull users
 
+### The Mendix Platform Handles Standard Actions
+For example, the CREATE BUTTON (Add) creates a new object and opens a page that contains the new object. So, the default New button is a fixed set of the standard actions Create object and Show page.
 
+### Microflows Handle Custom Actions
+To create your own process, you model a microflow. With microflows, you can create your own set of actions in their own order using the same actions as the default buttons use.
+
+![Microflow Placement](/images/microflow_placement.png "Microflow Placement")
+![Microflow Components](/images/microflow_components.png "Microflow Components")
+### Microflow in Wireframe
+![Microflow Wireframe](/images/microflow_wireframe.png "Microflow Wireframe")
+
+### Building Microflow Example
+1. In the Toolbox, find the Show Page activity and place it on the flow, between the start and end event.
+
+2. The Show Page event will open the TrainingEvent_NewEdit page. This page needs a TrainingEvent object but the microflow does not have that object yet. In order to create it, you need another activity. In the Toolbox, find the Create Object activity and place it on the microflow, between the start event and the Show Page activity.
+
+![Creating Microflows](/images/creating_microflows.png "Creating Microflows")
+3. With the Create Object activity selected, go to the Properties pane. Select the entity for which you want to create an object. In this case, that is the TrainingEvent entity. See how the Variable Name is automatically set to NewTrainingEvent? Variables always need a unique name, so the microflow knows which variable you are referring to. Mendix Studio will try to help you with naming variables when possible. In this case, the variable is a training event and it’s new, so Mendix Studio generates the name NewTrainingEvent for you.
+
+4. Under Initialize Members, click Add New Value. Open the Select an attribute or association dropdown to see the options. You see that you can set the value of the StartDate, EndDate, Course, Location or Teacher. In this case you need to set the value of the Course to the Course that is available as the Parameter in the microflow.
+
+5. Next you need to assign the Parameter to the Association. Click Variables / Attributes and select Course from the list. This will prefill the Course association on your TrainingEvent page so the TrainingEvent_NewEdit page will have the right Course selected.
+![Creating Variables](/images/creating_variables.png "Creating Variables")
+### Events
+Events represent the start and end points of a microflow.
+![Events](/images/events.png "Events")
+### Flows
+Flows form the connection between elements.
+![Flows](/images/flows.png "Flows")
+### Activities
+Activities are the actions that are executed in a microflow.
+![Activities](/images/activities.png "Activities")
+### Decisions
+Decisions deal with making choices and merging different paths again.
+![Decisions](/images/decisions.png "Decisions")
+### Artifacts
+Artifacts provide the microflow with input and allow comments to be made.
+![Artifacts](/images/artifacts.png "Artifacts")
 # Mendix Studio Workshop Playlist
 [Mendix Studio Video Playlist](https://video.mendix.com/categories/mendix-studio-workshop?page=2&slug=mendix-studio-workshop)
 ## Manual Domain Modeling
