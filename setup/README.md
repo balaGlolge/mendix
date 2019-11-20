@@ -1,6 +1,6 @@
 # Setting up EC2 Windows Server
 
-![EC2 Setup 01](/images/ec2_setup_01.png "EC2 Setup 01")
+![EC2 Setup 01](/setup/images/ec2_setup_01.png "EC2 Setup 01")
 ![EC2 Setup 02](/images/ec2_setup_02.png "EC2 Setup 02")
 ![EC2 Setup 03](/images/ec2_setup_03.png "EC2 Setup 03")
 ![EC2 Setup 04](/images/ec2_setup_04.png "EC2 Setup 04")
