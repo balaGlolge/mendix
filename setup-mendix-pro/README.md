@@ -1,4 +1,19 @@
-# Setting up EC2 Windows Server
+# Setup Mendix Studio Pro for MacOS Users
+This guide walks you through using AWS EC2 Instance Windows Server and Install Mendix Studio Pro.
+
+Alternatives
+- VirtualBox
+- Parallels
+- Buy Windows PC / Laptop
+
+# Table of Contents
+- [Setting up AWS EC2 Windows Server](https://github.com/clarkngo/mendix/tree/master/setup-mendix-pro#setting-up-ec2-windows-server)
+- [Setting up Microsoft Remote Desktop for MacOS](https://github.com/clarkngo/mendix/tree/master/setup-mendix-pro#setting-up-microsoft-remote-desktop-for-macos)
+- [Common Gotcha - getting the Public DNS IPv4 as PC Name and the password](https://github.com/clarkngo/mendix/tree/master/setup-mendix-pro#setting-up-microsoft-remote-desktop-for-macos)
+- [AWS EC2 Windows Server Configuration - Can't Login to Mendix](https://github.com/clarkngo/mendix/tree/master/setup-mendix-pro#aws-ec2-windows-server-configuration---cant-login-to-mendix)
+- [Mendix Studio Pro Setup](https://github.com/clarkngo/mendix/tree/master/setup-mendix-pro#ec2-windows-server-configuration---cant-login-to-mendix)
+
+# Setting up AWS EC2 Windows Server
 
 ## Step 01
 ![EC2 Setup 01](/setup-mendix-pro/images/ec2_setup_01.png "EC2 Setup 01")
@@ -47,7 +62,7 @@
 ## Gotcha 03
 ![Common Gotcha 03](/setup-mendix-pro/images/common_gotcha_03.png "Common Gotcha 03")
 
-# EC2 Windows Server Configuration - Can't Login to Mendix
+# AWS EC2 Windows Server Configuration - Can't Login to Mendix
 ## Gotcha
 ![Common Gotcha 04](/setup-mendix-pro/images/common_gotcha_04.png "Common Gotcha 04")
 ## Step 01
