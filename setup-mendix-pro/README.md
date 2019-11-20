@@ -14,7 +14,7 @@
 ![EC2 Setup 12](/setup-mendix-pro/images/ec2_setup_12.png "EC2 Setup 12")
 ![EC2 Setup 13](/setup-mendix-pro/images/ec2_setup_13.png "EC2 Setup 13")
 
-# Setting up Mac Remote Desktop Setup
+# Setting up Microsoft Remote Desktop for MacOS
 
 ![Mac Microsoft Remote Desktop Setup 01](/setup-mendix-pro/images/mac_rdp_01.png "Mac Microsoft Remote Desktop Setup 01")
 ![Mac Microsoft Remote Desktop Setup 02](/setup-mendix-pro/images/mac_rdp_02.png "Mac Microsoft Remote Desktop Setup 02")
