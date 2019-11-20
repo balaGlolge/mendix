@@ -1,10 +1,16 @@
 # Setting up EC2 Windows Server
 
+## Step 01
 ![EC2 Setup 01](/setup-mendix-pro/setup-mendix-pro/images/ec2_setup_01.png "EC2 Setup 01")
+## Step 02
 ![EC2 Setup 02](/setup-mendix-pro/images/ec2_setup_02.png "EC2 Setup 02")
+## Step 03
 ![EC2 Setup 03](/setup-mendix-pro/images/ec2_setup_03.png "EC2 Setup 03")
+## Step 04
 ![EC2 Setup 04](/setup-mendix-pro/images/ec2_setup_04.png "EC2 Setup 04")
+## Step 05
 ![EC2 Setup 05](/setup-mendix-pro/images/ec2_setup_05.png "EC2 Setup 05")
+## Step 06
 ![EC2 Setup 06](/setup-mendix-pro/images/ec2_setup_06.png "EC2 Setup 06")
 ![EC2 Setup 07](/setup-mendix-pro/images/ec2_setup_07.png "EC2 Setup 07")
 ![EC2 Setup 08](/setup-mendix-pro/images/ec2_setup_08.png "EC2 Setup 08")
