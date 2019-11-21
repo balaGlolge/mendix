@@ -1,3 +1,5 @@
+# Developed by Clark Jason Ngo
+https://github.com/clarkngo/mendix/tree/master/setup-mendix-pro
 # Setup Mendix Studio Pro for MacOS Users
 This guide walks you through using AWS EC2 Instance Windows Server and Install Mendix Studio Pro.
 
