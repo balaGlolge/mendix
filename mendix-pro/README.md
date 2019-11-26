@@ -1,5 +1,5 @@
 # Mendix Studio Pro
-![Layout Mendix Studio Pro](/images/pro_layout.png "Layout Mendix Studio Pro")
+![Layout Mendix Studio Pro](/mendix-pro/images/pro_layout.png "Layout Mendix Studio Pro")
 
 1. First of all, at the top of Mendix Studio Pro is the control bar. These are the menus and buttons, from left to right:
 
@@ -49,11 +49,11 @@ There are two prerequisites for accessing a Team Server project:
 ## Working Copy
 A working copy is a local copy of the project. This local copy is what you work on and where you make all your changes. When you start working on your local copy, it starts to deviate from the original, which is stored in the repository on the Team Server. Working on your local copy has no effect on the repository. Once you are done with the changes, you can commit them, resulting in a new revision in the repository.
 
-![Working Copy](/images/working_copy.png "Working Copy")
+![Working Copy](/mendix-pro/images/working_copy.png "Working Copy")
 
 ## Status and Changes
 Different kinds of changes are visualized with the following icons:
-![Status Changes](/images/status_changes.png "Status Changes")
+![Status Changes](/mendix-pro/images/status_changes.png "Status Changes")
 
 ## Committing Changes
 Sending changes to the repository is called committing. The idea is that you commit small, consistent pieces of work to the repository (for example, implementing a new feature and fixing a bug).
@@ -130,10 +130,10 @@ Open the project Navigation.
 
 Add the following navigation items:
 
-![Navigation Items](/images/navigation_items.png "Navigation Items")
+![Navigation Items](/mendix-pro/images/navigation_items.png "Navigation Items")
 
 It should look like this in Mendix Studio Pro:
-![Navigation Items in Studio Pro](/images/navigation_items_in_studio_pro.png "Navigation Items in Studio Pro")
+![Navigation Items in Studio Pro](/mendix-pro/images/navigation_items_in_studio_pro.png "Navigation Items in Studio Pro")
 
 That’s it! You’re all set to do the assignments. Go ahead and continue with the next module.
 
@@ -147,7 +147,7 @@ In this module you will learn how to use Mendix Studio Pro to make your app more
 ## Automatically Fill End Date
 In the image below, you can see that, when Jimmy selects a Course and Start Date for a Training Event he is about to create, the End Date is automatically calculated. Note that European date format is used in the images of this course.
 
-![Auto Fill End Date](/images/auto_fill_end_date.png "Auto Fill End Date")
+![Auto Fill End Date](/mendix-pro/images/auto_fill_end_date.png "Auto Fill End Date")
 
 Let's formulate a plan for building this functionality. You will need a couple of steps:
 
@@ -182,14 +182,14 @@ For example, the input widget that changes the StartDate value can trigger a mic
 
 4. Remember the naming convention for microflows? Prefix_Entity_Operation. The prefix for an On Change event is OCH. Give the microflow a clear name, according to the naming convention. This way it will be easier for another developer to interpret what it is and what it does, should the need arise. A good name is: OCH_TrainingEvent_CalculateEndDate.
 
-![End Date Picker](/images/end_date_picker.png "End Date Picker")
+![End Date Picker](/mendix-pro/images/end_date_picker.png "End Date Picker")
 
 #### Course Input Widget (Drop Down)
 As each course has a different duration, the end date also changes when a (different) course is selected. This means the course selector also needs to trigger the same microflow.
 
 1. Go back to the view of TrainingEvent_NewEdit add an On Change event to the course selector and connect the OCH_TrainingEvent_CalculateEndDate microflow to it.
 
-![Course Input Widget](/images/course_input_widget.png "Course Input Widget")
+![Course Input Widget](/mendix-pro/images/course_input_widget.png "Course Input Widget")
 
 2. Open the newly created microflow. See how it has a TrainingEvent parameter? This represents the TrainingEvent the end user is currently creating or editing.
 
@@ -207,7 +207,7 @@ Common Gotcha: You need to click `Show` on the Microflow inside Edit Reference S
 
 The **expression editor** is where you are going to write an expression to add custom logic to your app.
 
-![Expression Editor](/images/expression_editor.png "Expression Editor")
+![Expression Editor](/mendix-pro/images/expression_editor.png "Expression Editor")
 
 ## Microflow Expressions
 
@@ -227,7 +227,7 @@ For example, to use the current date and time, use `[%CurrentDateTime%]`
 
 These are some general expressions:
 
-![General Expressions](/images/general_expressions.png "General Expressions")
+![General Expressions](/mendix-pro/images/general_expressions.png "General Expressions")
 
 ### Examples of microflow expressions
 You can use the **round** function to round a number. If the value of the variable `$Number` is 0.99, then the outcome of the function **round(`$Number`)** will be 1.
